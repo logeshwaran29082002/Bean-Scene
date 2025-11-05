@@ -13,13 +13,16 @@
 
     <!-- Google Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@300;500;700&family=Playfair+Display:wght@400;600&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
+<!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <body>
     <header class="bg-image">
@@ -65,25 +68,217 @@
       </nav>
 
       <!-- ===== Coffee Hero Section ===== -->
-      <section class="coffee-hero d-flex align-items-center">
-        <div class="container">
-          <div class="hero-content text-white">
-            <p class="intro-text">We've got your morning covered with</p>
-            <h1 class="coffee-title">Coffee</h1>
-            <p class="description">
-              It is best to start your day with a cup of coffee. Discover the       
-             best flavours coffee you will ever have. We provide the best  
-         for our customers.</p>
-            
-            <button class="btn btn-warning rounded-pill px-4 fw-semibold">
-              Order Now
-            </button>
+   <section class="coffee-hero d-flex align-items-center" data-aos="fade-up">
+  <div class="container">
+    <div class="hero-content text-white">
+      <p class="intro-text">We've got your morning covered with</p>
+      <h1 class="coffee-title" data-aos="fade-down">Coffee</h1>
+      <p class="description" data-aos="fade-up" data-aos-delay="200">
+        It is best to start your day with a cup of coffee. Discover the
+        best flavours coffee you will ever have. We provide the best for
+        our customers.
+      </p>
+      <button class="btn btn-warning rounded-pill px-4 fw-semibold" data-aos="zoom-in" data-aos-delay="400">
+        Order Now
+      </button>
+    </div>
+  </div>
+</section>
+
+    </header>
+
+      <!-- ===== Discover Section ===== -->
+    <section class="discover-section py-5" data-aos="fade-up">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Side -->
+      <div class="col-lg-6 col-md-12 text-lg-start text-center mb-4 mb-lg-0" data-aos="fade-right">
+        <h2 class="discover-title mb-3">Discover the best coffee</h2>
+        <p class="discover-text mb-4">
+          Bean Scene is a coffee shop that provides you with quality coffee
+          that helps boost your productivity and helps build your mood.
+          Having a cup of coffee is good, but having a cup of real coffee is
+          greater. There is no doubt that you will enjoy this coffee more
+          than others you have ever tasted.
+        </p>
+        <button class="btn btn-warning rounded-pill px-4 py-2 fw-semibold" data-aos="zoom-in">
+          Learn More
+        </button>
+      </div>
+
+      <!-- Right Side -->
+      <div class="col-lg-6 col-md-12 text-center" data-aos="fade-left">
+        <img
+          src="assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.png"
+          alt="Coffee Bean Cup"
+          class="img-fluid coffee-img"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+   <section class="coffee-menu py-5">
+      <div class="container text-center">
+        <h2 class="menu-title mb-3" data-aos="fade-up">
+          Enjoy a new blend of coffee style
+        </h2>
+        <p class="menu-subtitle mb-5" data-aos="fade-up" data-aos-delay="200">
+          Explore all flavours of coffee with us. There is always a new cup
+          worth experiencing.
+        </p>
+
+        <div class="row g-4">
+          <!-- Coffee Card 1 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in">
+            <div class="coffee-card p-3">
+              <img
+                src="assets/Rectangle 7.png"
+                alt="Cappuccino"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="coffee-name">Cappuccino</h5>
+              <p class="coffee-desc">Coffee 50% | Milk 50%</p>
+              <p class="coffee-price">$8.50</p>
+              <button class="btn btn-warning rounded-pill px-4 fw-semibold">
+                Order Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Coffee Card 2 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="100">
+            <div class="coffee-card p-3">
+              <img
+                src="assets/Rectangle 9.png"
+                alt="Chai Latte"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="coffee-name">Chai Latte</h5>
+              <p class="coffee-desc">Coffee 50% | Milk 50%</p>
+              <p class="coffee-price">$8.50</p>
+              <button class="btn btn-warning rounded-pill px-4 fw-semibold">
+                Order Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Coffee Card 3 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="200">
+            <div class="coffee-card p-3">
+              <img
+                src="assets/Rectangle 11 (1).png"
+                alt="Macchiato"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="coffee-name">Macchiato</h5>
+              <p class="coffee-desc">Coffee 50% | Milk 50%</p>
+              <p class="coffee-price">$8.50</p>
+              <button class="btn btn-warning rounded-pill px-4 fw-semibold">
+                Order Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Coffee Card 4 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="300">
+            <div class="coffee-card p-3">
+              <img
+                src="assets/Rectangle 13 (1).png"
+                alt="Expresso"
+                class="img-fluid rounded mb-3"
+              />
+              <h5 class="coffee-name">Expresso</h5>
+              <p class="coffee-desc">Coffee 50% | Milk 50%</p>
+              <p class="coffee-price">$8.50</p>
+              <button class="btn btn-warning rounded-pill px-4 fw-semibold">
+                Order Now
+              </button>
+            </div>
           </div>
         </div>
-      </section>
-    </header>
+      </div>
+    </section>
+
+
+
+      <!-- ===== Why Are We Different Section ===== -->
+    <section class="why-section py-5">
+      <div class="container text-center">
+        <h2 class="why-title mb-3" data-aos="fade-up">Why are we different?</h2>
+        <p class="why-subtitle mb-5 text-secondary" data-aos="fade-up" data-aos-delay="100">
+          We don't just make your coffee, we make your day!
+        </p>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in">
+            <div class="why-card highlight">
+              <div class="icon mb-3">
+                <img src="assets/coffee-beans 1.png" alt="Beans" />
+              </div>
+              <h5 class="why-heading">Supreme Beans</h5>
+              <p class="why-text">Beans that provides great taste</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="100">
+            <div class="why-card">
+              <div class="icon mb-3">
+                <img src="assets/badge 1.png" alt="Quality" />
+              </div>
+              <h5 class="why-heading">High Quality</h5>
+              <p class="why-text">We provide the highest quality</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="200">
+            <div class="why-card">
+              <div class="icon mb-3">
+                <img src="assets/coffee-cup 1.png" alt="Coffee Cup" />
+              </div>
+              <h5 class="why-heading">Extraordinary</h5>
+              <p class="why-text">Coffee like you have never tasted</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in" data-aos-delay="300">
+            <div class="why-card">
+              <div class="icon mb-3">
+                <img src="assets/best-price 1.png" alt="Price" />
+              </div>
+              <h5 class="why-heading">Affordable Price</h5>
+              <p class="why-text">Our Coffee prices are easy to afford</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Text -->
+        <p class="bottom-text mt-5 text-secondary" data-aos="fade-up">
+          Great ideas start with great coffee. Let’s help you achieve that
+        </p>
+        <h5 class="get-started-text" data-aos="fade-up" data-aos-delay="100">
+          Get started today.
+        </h5>
+        <button class="btn btn-warning rounded-pill px-4 py-2 fw-semibold mt-3" data-aos="zoom-in" data-aos-delay="200">
+          Join Us
+        </button>
+      </div>
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,  // animation speed (1 second)
+    once: true       // animates only once
+  });
+</script>
+
   </body>
 </html>
