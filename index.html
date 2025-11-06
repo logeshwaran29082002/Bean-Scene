@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <!-- AOS Animation CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <body>
     <header class="bg-image">
@@ -303,7 +303,7 @@
 
         <!-- Bottom Text -->
         <p class="bottom-text mt-5 text-secondary" data-aos="fade-up">
-          Great ideas start with great coffee. Let’s help you achieve that
+          Great ideas start with great coffee. Let's help you achieve that
         </p>
         <h5 class="get-started-text" data-aos="fade-up" data-aos-delay="100">
           Get started today.
@@ -313,19 +313,58 @@
           data-aos="zoom-in"
           data-aos-delay="200"
         >
-          Join Us
+          Click Me
         </button>
+      </div>
+    </section>
+
+    <section class="coffee-hero1">
+      <div class="container-fluid p-0 position-relative d-flex">
+        <!-- Background image -->
+        <img
+          src="assets/ChatGPT Image Nov 6, 2025, 04_09_20 PM.png"
+          alt="Coffee Background"
+          class="bg-img"
+          data-aos="zoom-in"
+        />
+
+        <!-- Brown overlay (optional for better readability) -->
+        <div class="overlay"></div>
+
+        <!-- Left side text content -->
+        <div
+          class="content text-white"
+          data-aos="fade-right"
+          data-aos-delay="300"
+        >
+          <h1 class="heading mb-3">
+            Get a chance to have an <br />Amazing morning
+          </h1>
+          <p class="text mb-4">
+            We are giving you a one-time opportunity to experience a better life
+            with coffee.
+          </p>
+          <button
+            class="btn btn-warning rounded-pill px-4 py-2 fw-semibold mt-3"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            Order Now
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000, // animation speed (1 second)
-        once: true, // animates only once
+        duration: 1000,
+        once: false, // Animate again on scroll up
+        mirror: true, // Mirror animation when scrolling back up
+        easing: "ease-in-out", // smoother animation
       });
     </script>
   </body>
