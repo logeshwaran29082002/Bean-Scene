@@ -1,13 +1,30 @@
-/* ===== Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* ===== Global Overflow Fixes ===== */
+ body {
+  overflow-x: hidden; /* ✅ prevent horizontal scrollbars */
+  overflow-y: auto;   /* ✅ keep vertical scrolling enabled */
+  font-family: "Poppins", sans-serif;
 }
 
+/* Prevent AOS animation overflow */
 [data-aos] {
-  transition-property: transform, opacity !important;
+  overflow: hidden;
 }
+
+/* Prevent zoom/fade overflow in key sections */
+.image-banner,
+.coffee-menu,
+.feedback-section,
+.why-section,
+.discover-section {
+  overflow: hidden;
+}
+
+/* Smooth scroll for transitions */
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* ===== Background ===== */
 /* ===== Background (Fixed for All Devices) ===== */
@@ -15,7 +32,8 @@
   position: relative;
   width: 100%;
   min-height: 100vh; /* fallback */
-  height: 100svh; /* ✅ new unit: small viewport height (mobile-safe) */
+  height: 100vh;
+  min-height: 100dvh; /* mobile modern fallback */
   background-image: url("assets/coffee_image.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,15 +43,6 @@
   justify-content: flex-start;
   align-items: center;
   overflow: hidden;
-}
-
-/* Dark overlay */
-.bg-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
 }
 
 /* Responsive Adjustments */
@@ -47,7 +56,7 @@
   .bg-image {
     background-size: cover; /* keep full screen */
     background-position: top center;
-    height: 100dvh; /* ✅ modern dynamic viewport fix */
+    height: 100dvh; /* modern dynamic viewport fix */
   }
 }
 
@@ -59,6 +68,16 @@
   padding: 20px 40px;
 }
 
+/* Remove default focus outline for toggler (accessible but subtle) */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* brand */
 .brand-name {
   font-family: "Clicker Script", cursive;
   font-size: 3rem;
@@ -191,18 +210,6 @@
   .coffee-title {
     font-size: 2.8rem;
   }
-}
-
-/* ===== Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  color: #5a4633;
 }
 
 /* ===== Discover Section ===== */
@@ -469,235 +476,138 @@ body {
   }
 }
 
-.coffee-hero1 {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Hero Banner ===== */
+.hero-banner {
+  background-image: url("assets/retangle14.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 600px; /* use min-height instead of fixed height */
+  width: 100%; /* make it responsive */
   display: flex;
-  justify-content: flex-start; /* left alignment */
+  align-items: center;
+  overflow: hidden;
 }
 
-.bg-img {
-  position: absolute;
+/* ===== Right Image ===== */
+.right-img {
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* ===== Coffee Cup Wrapper ===== */
+.hero-cup {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.8;
-  z-index: 1;
 }
 
-
-
-/* ✅ Left content */
-.coffee-hero1 .content {
-  position: relative;
-  z-index: 3;
-  color: white;
-  max-width: 500px;
-  margin-left: 100px; /* pushes content from left edge */
-  margin-top: 200px;
-  text-align: left;
-
-  transform: translateY(20px); /* slight center adjustment */
+.hero-cup img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 50px;
 }
 
-.heading {
-  font-size: 3rem;
-  font-weight: 700;
+/* ===== Text Section ===== */
+.hero-text {
+  padding: 0 40px;
+}
+
+.hero-text h2 {
   font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #f7f5f1;
 }
 
-.text {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #f5f5f5;
-  margin-bottom: 1.5rem;
+.hero-text .highlight {
+  color: #f7f5f1;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #e5e5e5;
+  margin-bottom: 0;
 }
 
 .btn-warning {
   background-color: #f9c06a;
-  color: #2e1f09;
-  font-weight: 600;
   border: none;
-  border-radius: 50px;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 25px;
   transition: all 0.3s ease;
 }
 
 .btn-warning:hover {
-  background-color: #ffdb82;
-  transform: translateY(-3px);
+  background-color: #f9c06a;
 }
 
-/* ✅ Responsive Fixes */
+/* ===== Responsive Adjustments ===== */
 @media (max-width: 992px) {
-  .coffee-hero1 {
-    justify-content: center;
+  .hero-banner {
     text-align: center;
+    padding: 60px 20px;
   }
-  .coffee-hero1 .content {
-    margin-left: 0;
-    max-width: 600px;
+
+  .hero-text {
+    padding: 0;
   }
-  .heading {
-    font-size: 2.4rem;
+
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+
+  .hero-cup img {
+    max-width: 350px;
+    margin: 30px auto 0;
+  }
+
+  .right-img {
+    justify-content: center;
   }
 }
 
 @media (max-width: 576px) {
-  .coffee-hero1 {
-    height: 80vh;
-    text-align: center;
-  }
-  .heading {
+  .hero-text h2 {
     font-size: 1.8rem;
   }
-  .text {
-    font-size: 1rem;
-  }
-  .coffee-hero1 .content {
-    margin-left: 0;
-    padding: 1rem;
+
+  .hero-cup img {
+    max-width: 280px;
   }
 }
 
 
 
 
-      /* ===== Section Styling ===== */
-      .feedback-section {
-        background-color: #fffaf2;
-        padding: 100px 20px;
-        text-align: center;
-        position: relative;
-      }
-
-      .feedback-title {
-        font-family: "Playfair Display", serif;
-        font-weight: 700;
-        color: #5a3825;
-      }
-
-      .feedback-subtitle {
-        color: #7b6652;
-        margin-bottom: 50px;
-        font-size: 1.1rem;
-      }
-
-      /* ===== Feedback Card ===== */
-      .feedback-card {
-        background-color: #fff7ea;
-        border-radius: 10px;
-        padding: 60px 40px 80px;
-        position: relative;
-        max-width: 900px;
-        margin: 0 auto;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .feedback-text {
-        color: #5a3825;
-        font-size: 1rem;
-        line-height: 1.7;
-        margin-top: 20px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .quote-icon {
-        font-size: 50px;
-        color: #5a3825;
-        position: absolute;
-        top: 25px;
-        left: 35px;
-      }
-
-      /* ===== Author ===== */
-      .feedback-author {
-        margin-top: 50px;
-      }
-
-      .feedback-author h5 {
-        font-weight: 700;
-        color: #5a3825;
-      }
-
-      .feedback-author p {
-        color: #7b6652;
-        font-size: 0.95rem;
-        margin-bottom: 15px;
-      }
-
-      .author-img {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      /* ===== Arrows (outside box) ===== */
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: 50px;
-        height: 50px;
-        background-color: #f9c06a;
-        border-radius: 8px;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 1;
-        transition: all 0.3s ease;
-      }
-
-      .carousel-control-prev:hover,
-      .carousel-control-next:hover {
-        background-color: #ffdb82;
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      .carousel-control-prev {
-        left: 10%;
-      }
-
-      .carousel-control-next {
-        right: 10%;
-      }
-
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        background-size: 70%;
-      }
-
-      /* ===== Decorative Chocolate Swirls ===== */
-      .swirl-left,
-      .swirl-right {
-        position: absolute;
-        top: 45%;
-        transform: translateY(-50%);
-        width: 200px;
-        z-index: 1;
-      }
-
-      .swirl-left {
-        left: 0;
-      }
-
-      .swirl-right {
-        right: 0;
-      }
-
-      /* ===== Responsive ===== */
-      @media (max-width: 992px) {
-        .carousel-control-prev,
-        .carousel-control-next {
-          display: none;
-        }
-        .swirl-left,
-        .swirl-right {
-          display: none;
-        }
-      }
 
 
 
@@ -708,166 +618,625 @@ body {
 
 
 
-           /* ===== Subscribe Section ===== */
-      .subscribe-section {
-        background: url("assets/coffee-bg.png") center/cover no-repeat;
-        color: white;
-        text-align: center;
-        padding: 100px 20px 80px;
-        position: relative;
-      }
 
-      .subscribe-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url(assets/Group\ 46.png);
-        z-index: 1;
-      }
 
-      .subscribe-section .container {
-        position: relative;
-        z-index: 2;
-      }
 
-      .subscribe-section h2 {
-        font-family: "Playfair Display", serif;
-        font-weight: 700;
-        margin-bottom: 15px;
-      }
 
-      .subscribe-section p {
-        color: #f5f5f5;
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-      }
 
-      .subscribe-form {
-        max-width: 550px;
-        margin: 0 auto;
-        display: flex;
-      }
 
-      .subscribe-form input {
-        flex: 1;
-        border: none;
-        border-radius: 50px 0 0 50px;
-        padding: 12px 20px;
-        font-size: 1rem;
-        outline: none;
-      }
 
-      .subscribe-form button {
-        background-color: #f9c06a;
-        color: #2e1f09;
-        font-weight: 600;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 0 50px 50px 0;
-        transition: all 0.3s ease;
-      }
 
-      .subscribe-form button:hover {
-        background-color: #ffdb82;
-      }
 
-      .coffee-cup-left,
-      .coffee-cup-right {
-        position: absolute;
-        width: 130px;
-        z-index: 3;
-      }
 
-      .coffee-cup-left {
-        left: 40px;
-        bottom: 0;
-      }
 
-      .coffee-cup-right {
-        right: 40px;
-        bottom: 0;
-      }
 
-      /* ===== Footer Section ===== */
-      footer {
-        background-color: #5a3825;
-        color: #fffaf2;
-        padding: 80px 20px 40px;
-        background-image: url("assets/fotter_image.png");
-        background-position: center;
-        background-size: cover;
-      }
 
-      .footer-brand {
-        font-family: "Clicker Script", cursive;
-        font-size: 2.2rem;
-        color: #f9c06a;
-        margin-bottom: 15px;
-      }
 
-      .footer-text {
-        color: #d6c2a5;
-        font-size: 0.95rem;
-        line-height: 1.8;
-        max-width: 350px;
-      }
 
-      .footer-links h5 {
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 20px;
-      }
 
-      .footer-links ul {
-        list-style: none;
-        padding: 0;
-      }
 
-      .footer-links ul li {
-        margin-bottom: 10px;
-      }
 
-      .footer-links ul a {
-        color: #d6c2a5;
-        text-decoration: none;
-        transition: 0.3s;
-      }
 
-      .footer-links ul a:hover {
-        color: #f9c06a;
-      }
 
-      .contact-info p {
-        color: #d6c2a5;
-        margin-bottom: 8px;
-      }
 
-      .social-icons a {
-        color: white;
-        font-size: 1.2rem;
-        margin-right: 15px;
-        transition: 0.3s;
-      }
 
-      .social-icons a:hover {
-        color: #fff;
-      }
 
-      /* Responsive */
-      @media (max-width: 768px) {
-        .subscribe-form {
-          flex-direction: column;
-          gap: 10px;
-        }
-        .subscribe-form input,
-        .subscribe-form button {
-          border-radius: 50px;
-        }
-        .coffee-cup-left,
-        .coffee-cup-right {
-          display: none;
-        }
-      }
+
+
+
+
+  /* feedback shrink to avoid overflow */
+  .feedback-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+
+/* ===== Section Styling ===== */
+.feedback-section {
+  background-color: #fffaf2;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.feedback-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #5a3825;
+}
+
+.feedback-subtitle {
+  color: #7b6652;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+/* ===== Feedback Card ===== */
+.feedback-card {
+  background-color: #fff7ea;
+  border-radius: 10px;
+  padding: 60px 40px 80px;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feedback-text {
+  color: #5a3825;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-icon {
+  font-size: 50px;
+  color: #5a3825;
+  position: absolute;
+  top: 25px;
+  left: 35px;
+}
+
+/* ===== Author ===== */
+.feedback-author {
+  margin-top: 50px;
+    font-family: "Playfair Display", serif;
+}
+
+.feedback-author h5 {
+  font-weight: 700;
+  color: #5a3825;
+    font-family: "Playfair Display", serif;
+}
+
+.feedback-author p {
+  color: #7b6652;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.author-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Arrows (outside box) ===== */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: #f9c06a;
+  border-radius: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #ffdb82;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev {
+  left: 10%;
+}
+
+.carousel-control-next {
+  right: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 70%;
+}
+
+/* ===== Decorative Chocolate Swirls ===== */
+.swirl-left,
+.swirl-right {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 200px;
+  z-index: 1;
+}
+
+.swirl-left {
+  left: 0;
+}
+
+.swirl-right {
+  right: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+  .swirl-left,
+  .swirl-right {
+    display: none;
+  }
+}
+
+/* ===== Subscribe Section ===== */
+.subscribe-section {
+  color: white;
+  text-align: center;
+  padding: 100px 20px 80px;
+  position: relative;
+}
+
+.subscribe-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/Group\ 46.png);
+  z-index: 1;
+}
+
+.subscribe-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.subscribe-section h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.subscribe-section p {
+  color: #f5f5f5;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.subscribe-form {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.subscribe-form input {
+  flex: 1;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.subscribe-form button {
+  background-color: #f9c06a;
+  color: #2e1f09;
+  font-weight: 600;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 0 50px 50px 0;
+  transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #ffdb82;
+}
+
+
+/* ===== Footer Section ===== */
+footer {
+  background-color: #5a3825;
+  padding: 80px 20px 40px;
+  background-image: url("assets/fotter_image.png");
+  background-position: center;
+  background-size: cover;
+}
+
+/* Brand name */
+.footer-brand {
+  font-family: "Clicker Script", cursive;
+  font-size: 2.2rem;
+  color: #f9c06a;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-brand:hover {
+  color: #ffc107;
+}
+
+/* Footer paragraph */
+.footer-text {
+  color: white;
+   font-family: "Playfair Display", serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 350px;
+  transition: color 0.3s ease;
+}
+
+.footer-text:hover {
+  color: #ffc107;
+}
+
+/* Footer link titles */
+.footer-links h5 {
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: #fff;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-links h5:hover {
+  color: #ffc107;
+}
+
+/* Footer link list */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul a {
+  font-family: "Playfair Display", serif;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul a:hover {
+  color: #ffc107;
+}
+
+/* Contact info */
+.contact-info p {
+  font-family: "Playfair Display", serif;
+    color: white;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.contact-info p:hover {
+  color: #ffc107;
+}
+
+/* Social icons */
+.social-icons a {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffc107;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .subscribe-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .subscribe-form input,
+  .subscribe-form button {
+    border-radius: 50px;
+  }
+  .coffee-cup-left,
+  .coffee-cup-right {
+    display: none;
+  }
+  footer {
+  background-color: #5a3825;
+  padding: 80px 20px 40px;
+  background-image: url("assets/fotter_image.png");
+  background-position: center;
+  background-size: cover;
+ }
+}
+
+/* ===== Responsive Adjustments ===== */
+
+/* ✅ Large Tablets & Small Laptops (992px ↓) */
+@media (max-width: 992px) {
+  /* ===== Navbar ===== */
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .d-flex {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* ===== Hero Section ===== */
+  .hero-content {
+    width: 85%;
+    margin: 25% auto 0;
+    text-align: center;
+  }
+
+  .coffee-title {
+    font-size: 5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  /* ===== Discover Section ===== */
+  .discover-title {
+    font-size: 2.2rem;
+  }
+
+  .discover-text {
+    font-size: 0.95rem;
+  }
+
+  .coffee-img {
+    max-width: 300px;
+  }
+
+  /* ===== Coffee Menu ===== */
+  .menu-title {
+    font-size: 2.2rem;
+  }
+
+  .coffee-card {
+    margin-bottom: 25px;
+  }
+
+  /* ===== Why Section ===== */
+  .why-title {
+    font-size: 2.2rem;
+  }
+
+  .why-card {
+    margin-bottom: 20px;
+  }
+
+  /* ===== Cup + Beans Section ===== */
+  .overlay-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+
+  .hero-text {
+    max-width: 90%;
+    margin: 0 auto 40px;
+  }
+
+  .hero-cup {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hero-cup .beans {
+    width: 320px;
+    right: -20px;
+    bottom: -40px;
+  }
+
+  /* ===== Feedback ===== */
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    text-align: center;
+    padding: 60px 25px;
+  }
+
+  .footer-links {
+    margin-bottom: 25px;
+  }
+}
+
+/* ✅ Tablets & Mobiles (768px ↓) */
+@media (max-width: 768px) {
+  /* ===== Hero Section ===== */
+  .hero-content {
+    width: 90%;
+    margin-top: 30%;
+  }
+
+  .coffee-title {
+    font-size: 3.8rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  /* ===== Cup + Beans Section ===== */
+  .hero-cup {
+    width: 250px;
+    height: auto;
+  }
+
+  .hero-cup .beans {
+    width: 260px;
+    right: 0;
+    bottom: -30px;
+  }
+
+  /* ===== Discover Section ===== */
+  .discover-title {
+    font-size: 2rem;
+  }
+
+  .discover-text {
+    font-size: 0.95rem;
+  }
+
+  /* ===== Coffee Menu ===== */
+  .menu-title {
+    font-size: 1.9rem;
+  }
+
+  /* ===== Feedback Section ===== */
+  .feedback-section {
+    padding: 60px 20px;
+  }
+
+  .feedback-card {
+    padding: 40px 25px 60px;
+  }
+
+  /* ===== Subscribe Section ===== */
+  .subscribe-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+    border-radius: 50px;
+  }
+
+  /* ===== Footer ===== */
+  .footer-links {
+    margin-bottom: 30px;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ✅ Small Mobiles (576px ↓) */
+@media (max-width: 576px) {
+  /* ===== Navbar ===== */
+  .brand-name {
+    font-size: 2.2rem;
+  }
+
+  /* ===== Hero Section ===== */
+  .hero-content {
+    width: 95%;
+    margin-top: 35%;
+  }
+
+  .coffee-title {
+    font-size: 3rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero-cup {
+    width: 220px;
+    height: auto;
+  }
+
+  .hero-cup .beans {
+    width: 200px;
+    right: 0;
+    bottom: -20px;
+  }
+
+  /* ===== Coffee Cards ===== */
+  .coffee-card {
+    margin-bottom: 20px;
+  }
+
+  /* ===== Why Section ===== */
+  .why-title {
+    font-size: 1.8rem;
+  }
+
+  .why-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* ===== Feedback ===== */
+  .feedback-text {
+    font-size: 0.95rem;
+  }
+
+  /* ===== Footer ===== */
+  .footer-brand {
+    font-size: 1.9rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 50px 15px;
+  }
+}
+
+/* ✅ Extra Small Screens (400px ↓) */
+@media (max-width: 400px) {
+  .coffee-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-cup {
+    width: 190px;
+  }
+
+  .hero-cup .beans {
+    width: 180px;
+    bottom: -15px;
+    right: -5px;
+  }
+
+  .intro-text,
+  .description {
+    font-size: 0.9rem;
+  }
+}
