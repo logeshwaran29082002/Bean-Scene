@@ -3,13 +3,28 @@
  body {
   overflow-x: hidden; /* ✅ prevent horizontal scrollbars */
   overflow-y: auto;   /* ✅ keep vertical scrolling enabled */
-  font-family: "Poppins", sans-serif;
 }
 
 /* Prevent AOS animation overflow */
 [data-aos] {
   overflow: hidden;
 }
+
+/* font family */
+    h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a,
+      button,
+      span,
+      li {
+        font-family: "Playfair Display", serif !important;
+      }
+
 
 /* Prevent zoom/fade overflow in key sections */
 .image-banner,
@@ -25,192 +40,186 @@ html {
   scroll-behavior: smooth;
 }
 
+  /* ===== Background ===== */
+      .bg-image {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: url("assets/coffee_image.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+      }
 
-/* ===== Background ===== */
-/* ===== Background (Fixed for All Devices) ===== */
-.bg-image {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* fallback */
-  height: 100vh;
-  min-height: 100dvh; /* mobile modern fallback */
-  background-image: url("assets/coffee_image.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-}
+      /* ===== Overlay (Full Header) ===== */
+      .bg-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1e1e1e;
+        opacity: 0.75; /* Adjust darkness */
+        z-index: 1;
+      }
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .bg-image {
-    background-position: center center;
-  }
-}
+      /* Ensure content sits above overlay */
+      .navbar,
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
 
-@media (max-width: 576px) {
-  .bg-image {
-    background-size: cover; /* keep full screen */
-    background-position: top center;
-    height: 100dvh; /* modern dynamic viewport fix */
-  }
-}
+      /* ===== Navbar ===== */
+      .navbar {
+        position: relative;
+        width: 100%;
+        padding: 20px 40px;
+        z-index: 2;
+      }
 
-/* ===== Navbar ===== */
-.navbar {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 20px 40px;
-}
+      .navbar-toggler {
+        border: none;
+        outline: none;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
 
-/* Remove default focus outline for toggler (accessible but subtle) */
-.navbar-toggler {
-  border: none;
-  outline: none;
-}
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-/* brand */
-.brand-name {
-  font-family: "Clicker Script", cursive;
+     .brand-name {
+  font-family: "Clicker Script", cursive !important;
   font-size: 3rem;
   color: #fff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
   text-decoration: none;
 }
 
-.navbar-nav .nav-link {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  margin: 0 10px;
-  transition: 0.3s;
-}
 
-.navbar-nav .nav-link:hover {
-  color: #ffc107 !important;
-}
+      .navbar-nav .nav-link {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        margin: 0 10px;
+        transition: 0.3s;
+      }
 
-/* ===== Coffee Section ===== */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 50%;
-  height: auto;
-  margin-top: 20%;
-  margin-left: 70px; /* desktop alignment */
-  text-align: left;
-  padding: 0 20px;
-}
+      .navbar-nav .nav-link:hover {
+        color: #ffc107 !important;
+      }
 
-.intro-text {
-  font-family: "Playfair Display", serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-}
+      /* ===== Hero Section ===== */
 
-.coffee-title {
-  font-family: "Clicker Script", cursive;
-  font-size: 7rem;
-  font-weight: 400;
-  margin-bottom: 25px;
-  line-height: 1;
-}
+      .hero-content {
+        width: 50%;
+        margin-top: 90px;
+        margin-bottom: 86px;
+        margin-right: 743px;
+        text-align: left;
+        color: #fff;
+      }
 
-.description {
-  font-family: "Playfair Display", serif;
-  font-weight: 300;
-  color: #f2f2f2;
-  margin-bottom: 25px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
+      .intro-text {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
 
-/* ===== Button Styling ===== */
-.btn-warning {
-  background-color: #f9c06a;
-  border: none;
-  color: #000;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  transition: 0.3s;
-  border-radius: 30px;
-}
+      .coffee-title {
+        font-family: "Clicker Script", cursive !important;
+        font-size: 10rem;
+        font-weight: 400;
+        margin-bottom: 25px;
+        
+      }
 
-.btn-warning:hover {
-  background-color: #ffc94b;
-  color: #000;
-  transform: scale(1.05);
-}
+      .description {
+        font-family: "Playfair Display", serif;
+        font-weight: 300;
+        color: #f2f2f2;
+        margin-bottom: 25px;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
 
-/* ===== Responsive Fixes ===== */
-@media (max-width: 992px) {
-  .hero-content {
-    width: 80%;
-    margin: 25% auto 0 auto; /* center horizontally */
-    text-align: center; /* center text */
-  }
+      /* ===== Button ===== */
+      .btn-warning {
+        background-color: #f9c06a;
+        border: none;
+        color: #000;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        transition: 0.3s;
+        border-radius: 30px;
+      }
 
-  .coffee-title {
-    font-size: 5rem;
-  }
+      .btn-warning:hover {
+        background-color: #ffc94b;
+        color: #000;
+        transform: scale(1.05);
+      }
 
-  .hero-content p {
-    font-size: 1rem;
-  }
+      /* ===== Responsive ===== */
+      @media (max-width: 992px) {
+        .hero-content {
+          width: 80%;
+          margin: 25% auto 0 auto;
+          text-align: center;
+        }
 
-  .navbar-nav {
-    text-align: center;
-  }
+        .coffee-title {
+          font-size: 5rem;
+        }
 
-  .d-flex {
-    justify-content: center;
-    margin-top: 10px;
-  }
-}
+        .navbar-nav {
+          text-align: center;
+        }
 
-@media (max-width: 576px) {
-  .brand-name {
-    font-size: 2.2rem;
-  }
+        .d-flex {
+          justify-content: center;
+          margin-top: 10px;
+        }
+      }
 
-  .hero-content {
-    width: 90%;
-    margin: 30% auto 0 auto;
-    text-align: center;
-  }
+      @media (max-width: 576px) {
+        .brand-name {
+          font-size: 2.2rem;
+        }
 
-  .coffee-title {
-    font-size: 3.5rem;
-  }
+        .hero-content {
+          width: 90%;
+          margin: 30% auto 0 auto;
+          text-align: center;
+        }
 
-  .intro-text {
-    font-size: 0.95rem;
-  }
+        .coffee-title {
+          font-size: 3.5rem;
+        }
 
-  .description {
-    font-size: 0.9rem;
-  }
-}
+        .intro-text {
+          font-size: 0.95rem;
+        }
 
-@media (max-width: 400px) {
-  .hero-content {
-    width: 95%;
-    margin: 35% auto 0 auto;
-    text-align: center;
-  }
+        .description {
+          font-size: 0.9rem;
+        }
+      }
 
-  .coffee-title {
-    font-size: 2.8rem;
-  }
-}
+      @media (max-width: 400px) {
+        .hero-content {
+          width: 95%;
+          margin: 35% auto 0 auto;
+        }
+
+        .coffee-title {
+          font-size: 2.8rem;
+        }
+      }
 
 /* ===== Discover Section ===== */
 .discover-section {
@@ -385,21 +394,20 @@ html {
 /* ===== Cards ===== */
 .why-card {
   background-color: #fff9f1;
-  border: 1px solid #f2e0c9;
+  border: 1px solid #fce1b8;
   border-radius: 10px;
   padding: 30px 20px;
   transition: 0.3s;
-  height: 100%;
+  height: 40vh;
 }
 
 .why-card:hover {
-  transform: translateY(-8px);
+  background-color: #ffeed8;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px);
 }
 
-.why-card.highlight {
-  background-color: #ffeed8;
-}
+
 
 .icon img {
   width: 60px;
@@ -483,127 +491,103 @@ html {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== Hero Banner ===== */
-.hero-banner {
-  background-image: url("assets/retangle14.png");
+/* Base styles */
+.order-section-container {
+  background-image: url(./assets/Group\ 46\ \(1\).png);
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
-  min-height: 600px; /* use min-height instead of fixed height */
-  width: 100%; /* make it responsive */
+  background-position: center;
+
+}
+
+.order-section {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 
-/* ===== Right Image ===== */
-.right-img {
-  padding: 0;
+/* Content Section */
+.order-section-content {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  color: #fff;
 }
 
-/* ===== Coffee Cup Wrapper ===== */
-.hero-cup {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 100%;
-}
-
-.hero-cup img {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  object-fit: contain;
-  margin-top: 50px;
-}
-
-/* ===== Text Section ===== */
-.hero-text {
-  padding: 0 40px;
-}
-
-.hero-text h2 {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
+.order-section-content h2 {
   font-size: 2.5rem;
   line-height: 1.2;
-  color: #f7f5f1;
 }
 
-.hero-text .highlight {
-  color: #f7f5f1;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  color: #e5e5e5;
+.order-section-content p {
   margin-bottom: 0;
+  font-size: 1.1rem;
 }
 
-.btn-warning {
-  background-color: #f9c06a;
-  border: none;
-  font-weight: 600;
-  padding: 10px 25px;
-  border-radius: 25px;
-  transition: all 0.3s ease;
+.order-section-content button {
+  width: fit-content;
 }
 
-.btn-warning:hover {
-  background-color: #f9c06a;
+/* Image Section */
+.order-section-img {
+  text-align: end;
 }
 
-/* ===== Responsive Adjustments ===== */
-@media (max-width: 992px) {
-  .hero-banner {
-    text-align: center;
-    padding: 60px 20px;
+.order-section-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   Responsive Breakpoints
+   ========================= */
+
+/* For tablets (≤ 992px) */
+
+  .order-section-content {
+    padding: 30px 0 0 0;
+    align-items: center;
   }
 
-  .hero-text {
-    padding: 0;
-  }
-
-  .hero-text h2 {
+  .order-section-content h2 {
     font-size: 2rem;
   }
 
-  .hero-cup img {
-    max-width: 350px;
-    margin: 30px auto 0;
+  .order-section-content p {
+    font-size: 1rem;
   }
 
-  .right-img {
-    justify-content: center;
-  }
-}
 
+  .order-section-img img {
+    width: 70%;
+  }
+
+
+/* For mobile devices (≤ 576px) */
 @media (max-width: 576px) {
-  .hero-text h2 {
-    font-size: 1.8rem;
+
+
+  .order-section-content h2 {
+    font-size: 1.6rem;
   }
 
-  .hero-cup img {
-    max-width: 280px;
+  .order-section-content p {
+    font-size: 0.95rem;
+  }
+
+  .order-section-img img {
+    width: 90%;
+  }
+
+  .order-section-content button {
+    font-size: 0.9rem;
+    padding: 8px 20px;
   }
 }
+
+
 
 
 
@@ -788,7 +772,6 @@ html {
     display: none;
   }
 }
-
 /* ===== Subscribe Section ===== */
 .subscribe-section {
   color: white;
@@ -804,7 +787,9 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(assets/Group\ 46.png);
+  background-image: url(assets/Group\ 46\ \(1\).png);
+  background-size: cover;
+  background-position: center;
   z-index: 1;
 }
 
@@ -825,33 +810,81 @@ html {
   margin-bottom: 30px;
 }
 
+/* ===== Form Container ===== */
 .subscribe-form {
-  max-width: 550px;
-  margin: 0 auto;
   display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-.subscribe-form input {
-  flex: 1;
-  border: none;
-  border-radius: 50px 0 0 50px;
-  padding: 12px 20px;
-  font-size: 1rem;
+/* Input Wrapper */
+.input-wrapper {
+  position: relative;
+  width: 380px;
+}
+
+/* Email Input */
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 130px 12px 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   outline: none;
+  font-size: 1rem;
+  color: #333;
 }
 
-.subscribe-form button {
+/* Subscribe Button (inline layout for large screens) */
+.input-wrapper button {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #f9c06a;
-  color: #2e1f09;
-  font-weight: 600;
+  color: #603809;
   border: none;
-  padding: 12px 30px;
-  border-radius: 0 50px 50px 0;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
-.subscribe-form button:hover {
-  background-color: #ffdb82;
+.input-wrapper button:hover {
+  background-color: #ffc94b;
+}
+
+/* ===== Responsive (stack input + button vertically) ===== */
+@media (max-width: 576px) {
+  .subscribe-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+
+  }
+
+  /* Make input full width */
+  .input-wrapper input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 6px;
+  }
+
+  /* Move button below input */
+  .input-wrapper button {
+    position: static;
+    transform: none;
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
 }
 
 
@@ -859,14 +892,16 @@ html {
 footer {
   background-color: #5a3825;
   padding: 80px 20px 40px;
-  background-image: url("assets/fotter_image.png");
+  background-image: url("assets/Frame\ 5.png");
   background-position: center;
   background-size: cover;
+  height: auto;
 }
 
 /* Brand name */
 .footer-brand {
-  font-family: "Clicker Script", cursive;
+ font-family: "Clicker Script", cursive !important;
+
   font-size: 2.2rem;
   color: #f9c06a;
   margin-bottom: 15px;
@@ -880,10 +915,8 @@ footer {
 /* Footer paragraph */
 .footer-text {
   color: white;
-   font-family: "Playfair Display", serif;
   font-size: 0.95rem;
   line-height: 1.8;
-  max-width: 350px;
   transition: color 0.3s ease;
 }
 
@@ -894,7 +927,6 @@ footer {
 /* Footer link titles */
 .footer-links h5 {
   font-weight: 700;
-  font-family: "Playfair Display", serif;
   color: #fff;
   margin-bottom: 20px;
   transition: color 0.3s ease;
@@ -915,7 +947,7 @@ footer {
 }
 
 .footer-links ul a {
-  font-family: "Playfair Display", serif;
+
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -927,7 +959,6 @@ footer {
 
 /* Contact info */
 .contact-info p {
-  font-family: "Playfair Display", serif;
     color: white;
   margin-bottom: 8px;
   transition: color 0.3s ease;
@@ -949,30 +980,8 @@ footer {
   color: #ffc107;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .subscribe-form {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .subscribe-form input,
-  .subscribe-form button {
-    border-radius: 50px;
-  }
-  .coffee-cup-left,
-  .coffee-cup-right {
-    display: none;
-  }
-  footer {
-  background-color: #5a3825;
-  padding: 80px 20px 40px;
-  background-image: url("assets/fotter_image.png");
-  background-position: center;
-  background-size: cover;
- }
-}
 
-/* ===== Responsive Adjustments ===== */
+
 
 /* ✅ Large Tablets & Small Laptops (992px ↓) */
 @media (max-width: 992px) {
@@ -1078,6 +1087,16 @@ footer {
   }
 }
 
+  /* ===== Footer ===== */
+  .footer-links {
+    margin-bottom: 30px;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
+
 /* ✅ Tablets & Mobiles (768px ↓) */
 @media (max-width: 768px) {
   /* ===== Hero Section ===== */
@@ -1125,9 +1144,7 @@ footer {
     padding: 60px 20px;
   }
 
-  .feedback-card {
-    padding: 40px 25px 60px;
-  }
+ 
 
   /* ===== Subscribe Section ===== */
   .subscribe-form {
@@ -1137,17 +1154,9 @@ footer {
 
   .subscribe-form input,
   .subscribe-form button {
-    border-radius: 50px;
+    border-radius: 4px;
   }
 
-  /* ===== Footer ===== */
-  .footer-links {
-    margin-bottom: 30px;
-  }
-
-  .contact-info p {
-    font-size: 0.9rem;
-  }
 }
 
 /* ✅ Small Mobiles (576px ↓) */

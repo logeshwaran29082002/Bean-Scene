@@ -22,6 +22,12 @@
       rel="stylesheet"
     />
 
+      <!-- ✅ Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Clicker+Script&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
@@ -30,11 +36,10 @@
   </head>
 
   <body>
-    <header class="bg-image">
+     <header class="bg-image">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
-          <!-- Brand -->
           <a href="#" class="navbar-brand brand-name">Bean Scene</a>
 
           <!-- Toggle Button -->
@@ -82,21 +87,22 @@
         </div>
       </nav>
 
-      <!-- ===== Coffee Hero Section ===== -->
-      <section class="coffee-hero d-flex align-items-center" data-aos="fade-up">
-        <div class="container">
-          <div class="hero-content text-white">
-            <p class="intro-text">We've got your morning covered with</p>
-            <h1 class="coffee-title" data-aos="fade-up">Coffee</h1>
-            <p class="description" data-aos="fade-up" data-aos-delay="200">
+      <!-- Hero Section -->
+      <section class="coffee-hero d-flex align-items-center " >
+        <div class="container ">
+          <div class="hero-content text-white ">
+            <p class="intro-text"  data-aos="fade-up"
+  data-aos-duration="1200">We've got your morning covered with</p>
+            <h1 class="coffee-title"  data-aos="fade-up"
+  data-aos-duration="1200">Coffee</h1>
+            <p class="description"  data-aos="fade-up"
+  data-aos-duration="1200">
               It is best to start your day with a cup of coffee. Discover the
-              best flavours coffee you will ever have. We provide the best for
-              our customers.
-            </p>
-            <button
-              class="btn btn-warning rounded-pill px-4 fw-semibold"
-              data-aos-delay="400"
-            >
+             <br>best flavours coffee you will ever have. We provide the best
+              <br> for our customers.</p>
+            
+            <button class="btn btn-warning rounded-pill px-4 fw-semibold"  data-aos="fade-right   "
+  data-aos-duration="1200">
               Order Now
             </button>
           </div>
@@ -113,7 +119,7 @@
             class="col-lg-6 col-md-12 text-lg-start text-center mb-4 mb-lg-0"
             data-aos="fade-right"
           >
-            <h2 class="discover-title mb-3">Discover the best coffee</h2>
+            <h2 class="discover-title mb-3" >Discover the best coffee</h2>
             <p class="discover-text mb-4">
               Bean Scene is a coffee shop that provides you with quality coffee
               that helps boost your productivity and helps build your mood.
@@ -321,39 +327,34 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-   <section class="hero-banner ">
-  <div class="container-fluid">
-    <div class="row align-items-center h-100">
-      <!-- Left Text -->
-      <div class="col-md-6 col-sm-12 text-center text-md-start">
-        <div class="hero-text">
-          <h2>Get a chance to have an</h2>
-          <h2 class="highlight">Amazing morning</h2>
-          <p class="text-secondary">We are giving you a one time opportunity to</p>
-          <p class="text-secondary">experience a better life with coffee.</p>
-          <button class="btn btn-warning mt-3">Order Now</button>
+    <section class="order-section-container container-fluid">
+      <div class="order-section row">
+        <div class="col-lg-6 order-section-content ">
+          <h2 class="text-light">Get a chance to have an</h2>
+        <h2 class="text-light">Amazing morning</h2>
+        <p class="text-secondary">we are giving opportunity to</p>
+        <p class="text-secondary">experience a better life with coffee.</p>
+        <button
+          class="btn btn-warning rounded-pill px-4 py-2 fw-semibold mt-3"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          order Now
+        </button>
+        </div>
+        <div class="col-lg-6 order-section-img p-0 ">
+          <img src="./assets/Frame 2 (1).png" alt="" class="img-fluid">
         </div>
       </div>
+    </section>
 
-      <!-- Right Side Image -->
-      <div class="col-md-6 col-sm-12 d-flex justify-content-end right-img">
-        <div class="hero-cup">
-          <img src="assets/Group 61.png" alt="Coffee Cup" class="cup " />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
+
+
+
+
+
 
 
     <!-- ===== Feedback Section ===== -->
@@ -478,10 +479,13 @@
           Don't miss out on our latest news, updates, tips and special offers
         </p>
 
-        <form class="subscribe-form" data-aos="zoom-in" data-aos-delay="500">
-          <input type="email" placeholder="Enter your mail" required />
-          <button type="submit">Subscribe</button>
-        </form>
+       <form class="subscribe-form" data-aos="zoom-in" data-aos-delay="500" id="form">
+  <div class="input-wrapper">
+    <input type="email" placeholder="Enter your email" required />
+    <button type="submit">Subscribe</button>
+  </div>
+</form>
+
       </div>
     </section>
 
@@ -491,7 +495,7 @@
         <div class="row gy-4">
           <!-- Left -->
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-3 col-md-6"
             data-aos="fade-right"
             data-aos-delay="200"
           >
@@ -512,7 +516,7 @@
 
           <!-- Center -->
           <div
-            class="col-lg-4 col-md-6 footer-links"
+            class="col-lg-3 col-md-6 footer-links"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -525,9 +529,31 @@
             </ul>
           </div>
 
+
+            <div
+            class="col-lg-3 col-md-6 footer-links"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <h5>Company</h5>
+            <div class="contact-info">
+              <p>
+                Akshya Nagar 1st Block 1st Cross,<br />
+                Ramamurthy nagar, Bangalore-560016
+              </p>
+              <p>+1 202-918-2132</p>
+              <p>beanscene@mail.com</p>
+              <p>www.beanscene.com</p>
+            </div>
+          </div>
+
+
+
+
+
           <!-- Right -->
           <div
-            class="col-lg-4 col-md-6 footer-links"
+            class="col-lg-3 col-md-6 footer-links"
             data-aos="fade-left"
             data-aos-delay="400"
           >
