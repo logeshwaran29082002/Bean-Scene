@@ -311,13 +311,19 @@ html {
   background-color: #fff9f1;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  border: solid 2px #fde5c1;
+  padding: 20px;
+  width: 100%;
+  position: relative;  /* IMPORTANT */
+  overflow: visible;   /* Button can come outside */
+  transition: 0.3s ease;
 }
 
 .coffee-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
+
 
 .coffee-card img {
   width: 100%;
@@ -325,6 +331,7 @@ html {
   object-fit: cover;
 }
 
+/* ===== Text ===== */
 .coffee-name {
   font-family: "Playfair Display", serif;
   font-size: 1.4rem;
@@ -342,43 +349,37 @@ html {
   font-size: 1rem;
   font-weight: 600;
   color: #4a2e10;
-  margin-bottom: 15px;
+  margin-bottom: 35px; /* space for button */
 }
 
-/* ===== Buttons ===== */
-.btn-warning {
+/* ===== Button (Inside card but bottom overlap) ===== */
+.order-btn {
   background-color: #f9c06a;
   color: #000;
   border: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
+
+  position: absolute;
+    /* **comes outside card** */
+  left: 32.5%;
 }
 
-.btn-warning:hover {
+.order-btn:hover {
   background-color: #ffb84d;
-  color: #000;
-  transform: scale(1.05);
+  
+}
+.height{
+  height: 64vh;
+}
+@media (max-width: 768px) {
+  .height {
+    height: auto;
+  }
+  .order-btn{
+    left: 40%;
+  }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 992px) {
-  .menu-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .menu-title {
-    font-size: 1.8rem;
-  }
-
-  .menu-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .coffee-name {
-    font-size: 1.2rem;
-  }
-}
 
 /* ===== Section ===== */
 
