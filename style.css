@@ -379,6 +379,12 @@ html {
     left: 40%;
   }
 }
+@media (max-width: 992px) and (min-width: 770px) {
+ .height{
+  height: auto;
+ }
+}
+
 
 
 /* ===== Section ===== */
@@ -545,9 +551,6 @@ html {
   height: auto;
 }
 
-/* =========================
-   Responsive Breakpoints
-   ========================= */
 
 /* For tablets (≤ 992px) */
 
@@ -736,11 +739,11 @@ html {
 }
 
 .carousel-control-prev {
-  left: 10%;
+  left: 13%;
 }
 
 .carousel-control-next {
-  right: 10%;
+  right: 13%;
 }
 
 .carousel-control-prev-icon,
@@ -748,37 +751,31 @@ html {
   background-size: 70%;
 }
 
-/* ===== Decorative Chocolate Swirls ===== */
-.swirl-left,
-.swirl-right {
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  width: 200px;
-  z-index: 1;
-}
 
-.swirl-left {
-  left: 0;
-}
 
-.swirl-right {
-  right: 0;
-}
 
-/* ===== Responsive ===== */
+/* ===== Tablet ===== */
 @media (max-width: 992px) {
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    display: none;
+  .custom-arrow {
+    width: 45px;
+    height: 45px;
   }
 
-  .swirl-left,
-  .swirl-right {
-    display: none;
-  }
+  .carousel-control-prev { left: 8%; }
+  .carousel-control-next { right: 8%; }
 }
+
+/* ===== Mobile ===== */
+@media (max-width: 576px) {
+  .custom-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-control-prev { left: 5%; }
+  .carousel-control-next { right: 5%; }
+}
+
 
 /* ===== Subscribe Section ===== */
 .subscribe-section {

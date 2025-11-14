@@ -28,6 +28,10 @@
       rel="stylesheet"
     />
 
+
+    <!--Icon-->
+    <link rel="icon" href="assets/icon.png">
+
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
@@ -351,116 +355,82 @@
 </section>
 
 
-    <!-- ===== Feedback Section ===== -->
-    <section
-      class="feedback-section"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-offset="200"
-    >
-      <div class="container">
-        <h2 class="feedback-title mb-3" data-aos="fade-down">
-          Our coffee perfection feedback
-        </h2>
-        <p class="feedback-subtitle" data-aos="fade-up" data-aos-delay="200">
-          Our customers have amazing things to say about us
-        </p>
+   <!-- ===== Feedback Section ===== -->
+<section class="feedback-section">
+  <div class="container">
+    <h2 class="feedback-title mb-3">Our coffee perfection feedback</h2>
+    <p class="feedback-subtitle">Our customers have amazing things to say about us</p>
 
-        <!-- Carousel -->
-        <div
-          id="feedbackCarousel"
-          class="carousel slide carousel-fade"
-          data-bs-ride="carousel"
-          data-bs-interval="5000"
-          data-aos="zoom-in"
-          data-aos-delay="300"
-        >
-          <div class="carousel-inner">
-            <!-- Feedback 1 -->
-            <div class="carousel-item active">
-              <div class="feedback-card mx-auto">
-                <i class="bi bi-quote quote-icon"></i>
-                <p class="feedback-text">
-                  Lorem Ipsum has been the industry's printer took a galley of
-                  type and scrambled it to make a type specimen book. It has
-                  survived not only five centuries but also the leap into
-                  electronic typesetting.
-                </p>
-                <div class="feedback-author">
-                  <h5>Jonny Thomas</h5>
-                  <p>Project Manager</p>
-                  <img
-                    src="assets/Rectangle 9 (2).png"
-                    alt="Author"
-                    class="author-img"
-                  />
-                </div>
-              </div>
-            </div>
+    <!-- Carousel -->
+    <div id="feedbackCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-            <!-- Feedback 2 -->
-            <div class="carousel-item">
-              <div class="feedback-card mx-auto">
-                <i class="bi bi-quote quote-icon"></i>
-                <p class="feedback-text">
-                  Coffee from Bean Scene has changed my mornings! Smooth,
-                  flavorful, and refreshing. I can’t imagine my day without it.
-                </p>
-                <div class="feedback-author">
-                  <h5>Sarah Lee</h5>
-                  <p>Marketing Lead</p>
-                  <img
-                    src="https://i.pravatar.cc/150?img=5"
-                    alt="Author"
-                    class="author-img"
-                  />
-                </div>
-              </div>
-            </div>
+      <div class="carousel-inner">
 
-            <!-- Feedback 3 -->
-            <div class="carousel-item">
-              <div class="feedback-card mx-auto">
-                <i class="bi bi-quote quote-icon"></i>
-                <p class="feedback-text">
-                  Excellent service and delicious coffee. The aroma, taste, and
-                  presentation are all top-notch — a must-try experience! also
-                  the leap into electronic typesetting.
-                </p>
-                <div class="feedback-author">
-                  <h5>David Johnson</h5>
-                  <p>Software Engineer</p>
-                  <img
-                    src="https://i.pravatar.cc/150?img=7"
-                    alt="Author"
-                    class="author-img"
-                  />
-                </div>
-              </div>
+        <!-- Feedback 1 -->
+        <div class="carousel-item active">
+          <div class="feedback-card mx-auto">
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="feedback-text">
+              Lorem Ipsum has been the industry's printer took a galley of type and scrambled it.
+            </p>
+            <div class="feedback-author">
+              <h5>Jonny Thomas</h5>
+              <p>Project Manager</p>
+              <img src="assets/Rectangle 9 (2).png" class="author-img" />
             </div>
           </div>
-
-          <!-- Controls -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#feedbackCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </button>
-
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#feedbackCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </button>
         </div>
+
+        <!-- Feedback 2 -->
+        <div class="carousel-item">
+          <div class="feedback-card mx-auto">
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="feedback-text">
+              Smooth, flavorful, and refreshing. I can't imagine my day without it.
+            </p>
+            <div class="feedback-author">
+              <h5>Sarah Lee</h5>
+              <p>Marketing Lead</p>
+              <img src="https://i.pravatar.cc/150?img=5" class="author-img" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback 3 -->
+        <div class="carousel-item">
+          <div class="feedback-card mx-auto">
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="feedback-text">
+              Excellent service and delicious coffee. A must-try experience!
+            </p>
+            <div class="feedback-author">
+              <h5>David Johnson</h5>
+              <p>Software Engineer</p>
+              <img src="https://i.pravatar.cc/150?img=7" class="author-img" />
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+
+      <!-- Custom Arrows -->
+      <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="prev">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#4a2e10">
+          <path d="M10 6L3 12L10 18V14H21V10H10V6Z"/>
+        </svg>
+      </button>
+
+      <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="next">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#4a2e10">
+          <path d="M14 6L21 12L14 18V14H3V10H14V6Z"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
 
     <!-- ===== Subscribe Section ===== -->
     <section class="subscribe-section">
